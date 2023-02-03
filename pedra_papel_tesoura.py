@@ -120,7 +120,12 @@ class ppd():
             print(f'Jogador: {pontos[0]}', f'Bot: {pontos[1]}', sep='\n')
             print('\n')
 
-            resultado = ppd.definir_vencedor(ppd.usuario(), ppd.bot())
+            jogador_escolha = ppd.usuario()
+            bot_escolha = ppd.bot()
+            
+            print(f'Jogador: {jogador_escolha}', f'Bot: {bot_escolha}', sep='\n')
+            
+            resultado = ppd.definir_vencedor(jogador_escolha, bot_escolha)
             print('='*10, f'{resultado}', '='*10, '\n')
             
             if resultado == 'Vitória':
