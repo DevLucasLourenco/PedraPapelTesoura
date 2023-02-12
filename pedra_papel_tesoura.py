@@ -2,7 +2,7 @@ import os
 import random
 
 
-class ppd():      
+class PedraPapelTesoura():      
     
     def titulo():
         os.system('cls')
@@ -78,13 +78,13 @@ class ppd():
                 
     
     def lista_numeros():
-        lista = [num for num, op in ppd.opcoes_escolha().items()]
+        lista = [num for num, op in PedraPapelTesoura.opcoes_escolha().items()]
         return lista 
     
     
     def bot()-> str:      
-        n = random.randint(ppd.lista_numeros()[0], ppd.lista_numeros()[-1])
-        escolha = ppd.opcoes_escolha()[n]
+        n = random.randint(PedraPapelTesoura.lista_numeros()[0], PedraPapelTesoura.lista_numeros()[-1])
+        escolha = PedraPapelTesoura.opcoes_escolha()[n]
         
         return escolha
 
@@ -96,11 +96,11 @@ class ppd():
         while True:
             try:
                 n = int(input(''))
-                if not n in ppd.lista_numeros():
+                if not n in PedraPapelTesoura.lista_numeros():
                     print('Escolha somente um dos números apresentados')
                     
                 else:
-                    escolha = ppd.opcoes_escolha()[n]
+                    escolha = PedraPapelTesoura.opcoes_escolha()[n]
                     return escolha
                     
             except Exception as e:
@@ -115,17 +115,17 @@ class ppd():
         while True:
             n += 1
             
-            ppd.titulo()
+            PedraPapelTesoura.titulo()
             
             print(f'Jogador: {pontos[0]}', f'Bot: {pontos[1]}', sep='\n')
             print('\n')
 
-            jogador_escolha = ppd.usuario()
-            bot_escolha = ppd.bot()
+            jogador_escolha = PedraPapelTesoura.usuario()
+            bot_escolha = PedraPapelTesoura.bot()
             
             print(f'Jogador: {jogador_escolha}', f'Bot: {bot_escolha}', sep='\n')
             
-            resultado = ppd.definir_vencedor(jogador_escolha, bot_escolha)
+            resultado = PedraPapelTesoura.definir_vencedor(jogador_escolha, bot_escolha)
             print('='*10, f'{resultado}', '='*10, '\n')
             
             if resultado == 'Vitória':
@@ -144,4 +144,4 @@ class ppd():
             else:
                 print('Selecione entre S ou N')        
                 
-ppd.run()
+PedraPapelTesoura.run()
